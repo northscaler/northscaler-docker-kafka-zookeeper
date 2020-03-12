@@ -1,4 +1,5 @@
 FROM bitnami/minideb:buster
+MAINTAINER docker@northscaler.com
 
 LABEL version=0.1.0-pre.1
 

@@ -1,5 +1,7 @@
 FROM bitnami/minideb:buster
 
+LABEL version=0.1.0-pre.0
+
 ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
     HOME="/" \
     OS_ARCH="amd64" \

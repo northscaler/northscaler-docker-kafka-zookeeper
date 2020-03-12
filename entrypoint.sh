@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-if [ -n "$ZOO_RUN_EMBEDDED" ]; then
-  info "Running zookeeper in container..."
-  /entrypoint-zookeeper.sh $@
-  info "Zookeeper started"
+if [ "$*" == "/run.sh" ]; then
+  if [ -n "$ZOO_RUN_EMBEDDED" ]; then
+    echo "Running zookeeper in container..."
+    /entrypoint-zookeeper.sh /run-zookeeper.sh
+  fi
+  ./entrypoint-kafka.sh /run-kafka.sh
+else
+  $@
 fi
-
-./entrypoint-kafka.sh $@

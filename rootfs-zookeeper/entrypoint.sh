@@ -17,9 +17,9 @@ eval "$(zookeeper_env)"
 
 print_welcome_page
 
-if [[ "$*" = "/run.sh" ]]; then
+if [[ "$*" = "/run-zookeeper.sh" ]]; then
     info "** Starting ZooKeeper setup **"
-    /setup.sh
+    /setup-zookeeper.sh
     info "** ZooKeeper setup finished! **"
 fi
 

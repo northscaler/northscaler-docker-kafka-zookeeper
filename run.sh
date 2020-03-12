@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -n "$ZOO_RUN_EMBEDDED" ]; then
-  echo launch zookeeper
+  ./run-zookeeper.sh $@
 fi
 
-./run-kafka.sh
+./run-kafka.sh $@

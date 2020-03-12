@@ -26,6 +26,9 @@ ENV NAMI_PREFIX="/.nami" \
 
 EXPOSE 9092
 
+RUN mv /entrypoint.sh /entrypoint-kafka.sh
+RUN mv /run.sh /run-kafka.sh
+
 #ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
 #    HOME="/" \
 #    OS_ARCH="amd64" \

@@ -16,9 +16,9 @@ eval "$(kafka_env)"
 
 print_welcome_page
 
-if [[ "$*" = "/run.sh" ]]; then
+if [[ "$*" = "/run-kafka.sh" ]]; then
     info "** Starting Kafka setup **"
-    /setup.sh
+    /setup-kafka.sh
     info "** Kafka setup finished! **"
 fi
 

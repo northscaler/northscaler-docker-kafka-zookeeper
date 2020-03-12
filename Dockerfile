@@ -10,7 +10,7 @@ ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
 
 # COPY prebuildfs /
 # Install required system packages and dependencies
-RUN install_packages ca-certificates curl libc6 procps sudo unzip zlib1g
+# RUN install_packages ca-certificates curl libc6 procps sudo unzip zlib1g
 # RUN . ./libcomponent.sh && component_unpack "java" "11.0.6-0" --checksum f7446f8bec72b6b2606d37ba917accc243e6cd4e722700c39ef83832c46fb0c6
 RUN . ./libcomponent.sh && component_unpack "zookeeper" "3.6.0-0" --checksum 1f7efe908883b1e3a34b54eacc8fa80d8e8c3a240bf91a403bd127490d19f9c5
 RUN . ./libcomponent.sh && component_unpack "wait-for-port" "1.0.0-1" --checksum 07c4678654b01811f22b5bb65a8d6f8e253abd4524ebb3b78c7d3df042cf23bd
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get upgrade -y && \
 
 # COPY rootfs /
 RUN for it in entrypoint postunpack run setup; do \
-    mv /$it.sh /$it-kafka.sh; done
+    mv /$it.sh /${it}-kafka.sh; done
 RUN for it in entrypoint postunpack run setup; do \
      curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-zookeeper/master/3/debian-10/rootfs/$it.sh > /${it}-zookeeper.sh \
      && chmod ugo+x /${it}-zookeeper.sh; done

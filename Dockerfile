@@ -1,7 +1,7 @@
 FROM bitnami/minideb:buster
 MAINTAINER docker@northscaler.com
 
-LABEL version=0.1.0-rc.0
+LABEL version=0.2.0-pre.0
 
 ENV BITNAMI_PKG_CHMOD="-R g+rwX"     HOME="/"     OS_ARCH="amd64"     OS_FLAVOUR="debian-10"     OS_NAME="linux"
 
